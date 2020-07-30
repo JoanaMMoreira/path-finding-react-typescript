@@ -1,0 +1,75 @@
+:root {
+    --dark-purple: #372e5a;
+}
+
+@keyframes fadeInChecked {
+    from {
+        background: var(--dark-purple);
+    }
+
+    to {
+        background: #9775fa;
+    }
+}
+
+@keyframes fadeInClosed {
+    from {
+        background: var(--dark-purple);
+    }
+
+    to {
+        background: rgb(144, 34, 240);
+    }
+}
+
+@keyframes fadeInPath {
+    from {
+        background: var(--dark-purple);
+    }
+
+    to {
+        background: #d9952b;
+    }
+}
+
+table.gridTable {
+    border-collapse: separate;
+    margin: auto;
+    border-spacing: 1px;
+}
+
+.gridCell {
+    width: calc(min(2.8vw, 2.6vh) - 3px);
+    /* (100vw - 10vw (margin)) / 32 = 2.8125 */
+    height: calc(min(2.8vw, 2.6vh) - 3px);
+    overflow: hidden;
+    background: var(--dark-purple);
+    border-radius: 4px;
+    border: 1px;
+}
+
+
+
+.gridCell.blocked {
+    background-color: #9D9DA0;
+}
+
+.gridCell.checked:not(.start):not(.end) {
+    animation: fadeInChecked 2s forwards;
+}
+
+.gridCell.closed:not(.start):not(.end) {
+    animation: fadeInClosed 2s forwards;
+}
+
+.gridCell.path:not(.start):not(.end) {
+    animation: fadeInPath 2s forwards;
+}
+
+.gridCell.start {
+    background-color: #4dd276;
+}
+
+.gridCell.end {
+    background-color: #EC605B;
+}
